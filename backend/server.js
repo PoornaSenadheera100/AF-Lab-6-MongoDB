@@ -54,7 +54,7 @@ app.put('/api/students/:id', async(req, res)=>{
 });
 
 app.delete('/api/students/:id', async(req, res)=>{
-    const student = await Student.findByIdAndDelete(id);
+    const student = await Student.findByIdAndDelete(req.params.id);
     res.status(204).json({message: 'Student deleted'});
 });
 
